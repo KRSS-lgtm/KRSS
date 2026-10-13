@@ -27,7 +27,7 @@ function privateChatPage(req,res){return userPage(req,res)}
 function newUserSession(res,user){const sid=crypto.randomBytes(32).toString('hex');sessions.set(sid,{type:'user',user,expires:Date.now()+24*60*60*1000});return {'Set-Cookie':`cw_sid=${sid}; Max-Age=86400; Path=/; HttpOnly; SameSite=Lax`}}
 
 function adminPage(req,res){const sessionOwner ='Admin';if(!isAdmin(req))return send(res,200,'text/html; charset=utf-8',loginHTML);
-function ownerSessionfunction ownerSession(req){
+function ownerSessionownerSession(req){
     const sessionOwner = 'Admin';
     const sid=cookies(req).krss_sid;
     const x=sid&&sessions.get(sid);
