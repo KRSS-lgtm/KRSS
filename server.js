@@ -48,7 +48,7 @@ function dedicatedOwnerLoginPage(name){
  let html=loginHTML;
  const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  html=html.replace('<input id="ownerName" type="text" name="ownerName" placeholder="Enter owner name" autocomplete="username" required>',`<input id="ownerName" type="text" name="ownerName" value="${esc(name)}" readonly autocomplete="username" required>`);
- html=html.replace('<h1>Owner Login</h1>','<h1>'+esc(name)+' — Owner Login</h1>');
+ html=html.replace('<h1>Owner/CEO Login</h1>','<h1>'+esc(name)+' — Owner Login</h1>');
  return html;
 }
 async function handle(req,res){const u=new URL(req.url,'http://localhost');const ip=req.socket.remoteAddress||'unknown';
